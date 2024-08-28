@@ -1,26 +1,69 @@
-<svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
-</svelte:head>
+<script lang="ts">
+	// List of work experience
+	interface Experience {
+		company: string;
+		year: string;
+	}
 
-<div class="text-column">
-	<h1>About this app</h1>
+	const experiences: Experience[] = [
+		{ company: "Domino's", year: "2022 - Present" },
+		{ company: "United Wholesale Mortgage", year: "2022" },
+		{ company: "Schedulicity", year: "2020 - 2021" },
+	];
 
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
+	// URLs for LinkedIn and resume
+	const linkedInUrl: string = "https://www.linkedin.com/in/your-profile";
+	const resumeUrl: string = "/resume.pdf"; // Adjust this path to where your resume is located
+</script>
 
-	<pre>npm create svelte@latest</pre>
+<section class="experience">
+	<h2>My Experience</h2>
+	<ul>
+		{#each experiences as exp}
+			<li>{exp.company} {exp.year}</li>
+		{/each}
+	</ul>
 
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
+	<div class="icons">
+		<a href={linkedInUrl} target="_blank" title="LinkedIn Profile">
+			<i class="fab fa-linkedin"></i>
+		</a>
+		<a href={resumeUrl} target="_blank" title="Download Resume">
+			<i class="fas fa-file-pdf"></i>
+		</a>
+	</div>
+</section>
 
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
-</div>
+<style>
+	.experience {
+		padding: 20px;
+	}
+	h2 {
+		margin-bottom: 20px;
+		font-size: 24px;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+	li {
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	.icons {
+		margin-top: 20px;
+		display: flex;
+		gap: 20px;
+	}
+	a {
+		color: #333;
+		font-size: 2rem;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #0077b5; /* LinkedIn color */
+	}
+	i.fas.fa-file-pdf {
+		color: red;
+	}
+</style>
