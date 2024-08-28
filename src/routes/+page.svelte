@@ -46,7 +46,13 @@
 			{#if isExpanded}
 				<li>
 					<span>{email}</span>
-					<button on:click={copyEmail}>{isCopied ? "Copied!" : "Copy Email"}</button>
+					<button on:click={copyEmail} title="Copy Email">
+						{#if isCopied}
+							<i class="fas fa-check"></i> <!-- checkmark icon -->
+						{:else}
+							<i class="fas fa-copy"></i> <!-- copy icon -->
+						{/if}
+					</button>
 				</li>
 			{/if}
 		</ul>
@@ -64,5 +70,19 @@
 
 	.menu ul {
 		list-style-type: none;
+	}
+
+	button {
+		padding: 5px;
+		cursor: pointer;
+		background: none;
+		border: none;
+	}
+	button:focus {
+		outline: none;
+	}
+	i {
+		font-size: 1.2rem;
+		color: #333;
 	}
 </style>
