@@ -1,13 +1,7 @@
-<script lang="ts">
-	import Navbar from "$lib/components/Navbar.svelte";
-</script>
-
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
-
-<Navbar />
 
 <section class="about">
 	<h2>About Me</h2>

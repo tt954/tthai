@@ -19,3 +19,13 @@
 		{/each}
 	</ul>
 </nav>
+
+<style>
+	ul {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		list-style-type: none;
+	}
+</style>

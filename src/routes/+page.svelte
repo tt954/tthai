@@ -25,7 +25,7 @@
 	<meta name="tieulam thai" content="personal website" />
 </svelte:head>
 
-<section>
+<section class="hero">
 	<h1>hi, welcome</h1>
 
 	<nav class="menu">
@@ -44,7 +44,7 @@
 				<a href="#" on:click|preventDefault={toggleContacts}> contacts </a>
 			</li>
 			{#if isExpanded}
-				<li>
+				<li class="contact-info">
 					<span>{email}</span>
 					<button on:click={copyEmail} title="Copy Email">
 						{#if isCopied}
@@ -60,16 +60,48 @@
 </section>
 
 <style>
-	section {
+	section.hero {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		flex: 0.6;
+		padding: 5rem 1rem;
+	}
+
+	h1 {
+		font-size: 8rem;
+		font-weight: 700;
+		margin-bottom: 2rem;
+		letter-spacing: 0.05em;
+		color: #333;
 	}
 
 	.menu ul {
 		list-style-type: none;
+		padding: 0;
+	}
+
+	.menu li {
+		margin: 1rem 0;
+	}
+
+	.menu a {
+		font-size: 1.5rem;
+		font-weight: 400;
+		color: #555;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.menu a:hover {
+		color: #000;
+	}
+
+	.contact-info {
+		display: flex;
+		align-items: center;
+		gap: 10px;
 	}
 
 	button {
@@ -77,12 +109,28 @@
 		cursor: pointer;
 		background: none;
 		border: none;
+		color: #555;
+		transition: color 0.3s ease;
 	}
+
 	button:focus {
 		outline: none;
 	}
+
+	button:hover {
+		color: #000;
+	}
+
 	i {
-		font-size: 1.2rem;
-		color: #333;
+		font-size: 1.5rem;
+	}
+
+	@media (min-width: 768px) {
+		h1 {
+			font-size: 5rem;
+		}
+		.menu a {
+			font-size: 1.75rem;
+		}
 	}
 </style>
