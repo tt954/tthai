@@ -1,6 +1,7 @@
 <script>
 	import Navbar from "$lib/components/Navbar.svelte";
 	import "./styles.css";
+	import "normalize.css";
 </script>
 
 <div class="app">
@@ -26,11 +27,6 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 2rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
 	}
 
 	footer {
@@ -38,10 +34,6 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-	}
-
-	footer a {
-		font-weight: bold;
 	}
 
 	@media (min-width: 480px) {

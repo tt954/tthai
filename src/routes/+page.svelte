@@ -34,10 +34,10 @@
 				<a href="/about">my name is Tieulam</a>
 			</li>
 			<li aria-current={$page.url.pathname === "/experience" ? "page" : undefined}>
-				<a href="/about">work experience</a>
+				<a href="/experience">work experience</a>
 			</li>
 			<li aria-current={$page.url.pathname === "/fun" ? "page" : undefined}>
-				<a href="/about">for fun</a>
+				<a href="/fun">for fun</a>
 			</li>
 			<!-- svelte-ignore a11y-invalid-attribute -->
 			<li>
@@ -63,16 +63,12 @@
 	section.hero {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
 		padding: 5rem 1rem;
 	}
 
 	h1 {
-		font-size: 8rem;
+		font-size: 5rem;
 		font-weight: 700;
-		margin-bottom: 2rem;
 		letter-spacing: 0.05em;
 		color: #333;
 	}
@@ -83,11 +79,14 @@
 	}
 
 	.menu li {
-		margin: 1rem 0;
+		border-bottom: 1px solid black;
+	}
+	.menu li:last-of-type {
+		border-bottom: none;
 	}
 
 	.menu a {
-		font-size: 1.5rem;
+		font-size: 10rem;
 		font-weight: 400;
 		color: #555;
 		text-decoration: none;
@@ -96,6 +95,7 @@
 
 	.menu a:hover {
 		color: #000;
+		cursor: pointer;
 	}
 
 	.contact-info {
