@@ -1,12 +1,9 @@
 <script>
-	import Navbar from "$lib/components/Navbar.svelte";
 	import "./styles.css";
 	import "normalize.css";
 </script>
 
 <div class="app">
-	<Navbar />
-
 	<main>
 		<slot />
 	</main>
