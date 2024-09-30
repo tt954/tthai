@@ -19,7 +19,6 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-		font-family: "Playfair Display", serif; /* Elegant serif font */
 		background: linear-gradient(to bottom right, #f3f4f6, #eaeff5); /* Soft gradient */
 	}
 
