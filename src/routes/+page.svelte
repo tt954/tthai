@@ -26,31 +26,30 @@
 </svelte:head>
 
 <section class="hero">
-	<h1>hi, welcome</h1>
+	<h1>Tiffany Thai</h1>
 
 	<nav class="menu">
 		<ul>
 			<li aria-current={$page.url.pathname === "/about" ? "page" : undefined}>
-				<a href="/about">my name is Tieulam</a>
+				<a href="/about">About Me</a>
 			</li>
 			<li aria-current={$page.url.pathname === "/experience" ? "page" : undefined}>
-				<a href="/experience">work experience</a>
+				<a href="/experience">Experience</a>
 			</li>
 			<li aria-current={$page.url.pathname === "/fun" ? "page" : undefined}>
-				<a href="/fun">for fun</a>
+				<a href="/fun">Fun</a>
 			</li>
-			<!-- svelte-ignore a11y-invalid-attribute -->
 			<li>
-				<a href="#" on:click|preventDefault={toggleContacts}> contacts </a>
+				<a href="#" on:click|preventDefault={toggleContacts}>Contacts</a>
 			</li>
 			{#if isExpanded}
 				<li class="contact-info">
 					<span>{email}</span>
 					<button on:click={copyEmail} title="Copy Email">
 						{#if isCopied}
-							<i class="fas fa-check"></i> <!-- checkmark icon -->
+							<i class="fas fa-check"></i>
 						{:else}
-							<i class="fas fa-copy"></i> <!-- copy icon -->
+							<i class="fas fa-copy"></i>
 						{/if}
 					</button>
 				</li>
@@ -63,74 +62,56 @@
 	section.hero {
 		display: flex;
 		flex-direction: column;
-		padding: 5rem 1rem;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		text-align: center;
+		background-color: #f5f5f5;
+		padding: 0 1rem;
 	}
 
 	h1 {
-		font-size: 5rem;
+		font-size: 3rem;
 		font-weight: 700;
-		letter-spacing: 0.05em;
 		color: #333;
+		margin-bottom: 2rem;
 	}
 
-	.menu ul {
-		list-style-type: none;
+	nav.menu ul {
+		list-style: none;
 		padding: 0;
+		display: flex;
+		gap: 1.5rem;
 	}
 
-	.menu li {
-		border-bottom: 1px solid black;
-	}
-	.menu li:last-of-type {
-		border-bottom: none;
+	nav.menu li {
+		font-size: 1.2rem;
 	}
 
-	.menu a {
-		font-size: 10rem;
-		font-weight: 400;
-		color: #555;
+	nav.menu a {
 		text-decoration: none;
-		transition: color 0.3s ease;
+		color: #007acc;
+		transition: color 0.3s;
 	}
 
-	.menu a:hover {
-		color: #000;
-		cursor: pointer;
+	nav.menu a:hover {
+		color: #005f99;
 	}
 
 	.contact-info {
 		display: flex;
 		align-items: center;
-		gap: 10px;
+		gap: 0.5rem;
 	}
 
-	button {
-		padding: 5px;
-		cursor: pointer;
+	.contact-info button {
 		background: none;
 		border: none;
-		color: #555;
-		transition: color 0.3s ease;
+		cursor: pointer;
+		color: #007acc;
 	}
 
-	button:focus {
-		outline: none;
-	}
-
-	button:hover {
-		color: #000;
-	}
-
-	i {
-		font-size: 1.5rem;
-	}
-
-	@media (min-width: 768px) {
-		h1 {
-			font-size: 5rem;
-		}
-		.menu a {
-			font-size: 1.75rem;
-		}
+	.contact-info button:hover {
+		color: #005f99;
 	}
 </style>

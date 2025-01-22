@@ -23,7 +23,13 @@
 	<h2>Projects</h2>
 	<div class="project-list">
 		{#each projects as project}
-			<Card title={project.title} description={project.description} href={project.link} technologies={project.technologies} imageUrl={project.imageUrl}/>
+			<Card
+				title={project.title}
+				description={project.description}
+				href={project.link}
+				technologies={project.technologies}
+				imageUrl={project.imageUrl}
+			/>
 		{/each}
 	</div>
 </section>
