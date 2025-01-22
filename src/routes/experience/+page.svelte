@@ -1,35 +1,5 @@
 <script lang="ts">
-	import Navbar from "$lib/components/Navbar.svelte";
-	import Dominos from "$lib/images/dominos.jpg";
-
-	// List of work experience
-	interface Experience {
-		position: string;
-		at: string;
-		year: string;
-		image: string;
-	}
-
-	const experiences: Experience[] = [
-		{
-			position: "Software \n Engineer",
-			at: "Domino's",
-			year: "Jan 2022 - Present",
-			image: Dominos,
-		},
-		{
-			position: "Front End" + "\n" + "Engineer",
-			at: "United Wholesale Mortgage",
-			year: "June 2021 - Dec 2021",
-			image: "/images/uwm.png",
-		},
-		{
-			position: "Web Developer",
-			at: "Schedulicity",
-			year: "June 2020 - June 2021",
-			image: "/images/schedulicity.png",
-		},
-	];
+	import { experiences } from "$assets/data/experiences";
 
 	// URLs for LinkedIn and resume
 	const linkedInUrl: string = "https://www.linkedin.com/in/your-profile";
@@ -40,8 +10,6 @@
 		expandedIndex = expandedIndex === index ? null : index;
 	}
 </script>
-
-<Navbar />
 
 <section class="experience">
 	<h2 class="title">recent <br /> experience.</h2>

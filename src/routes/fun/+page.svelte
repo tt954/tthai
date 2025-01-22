@@ -1,26 +1,12 @@
 <script lang="ts">
-	import Navbar from "$lib/components/Navbar.svelte";
-	import Card from "$lib/components/Card.svelte";
-
-	interface Project {
-		title: string;
-		description: string;
-		link: string;
-		technologies?: string[];
-		imageUrl?: string;
-	}
-
-	const projects: Project[] = [
-		{ title: "Project 1", description: "Description of project 1", link: "#" },
-		{ title: "Project 2", description: "Description of project 2", link: "#" },
-		{ title: "Project 3", description: "Description of project 3", link: "#" },
-	];
+	import Navbar from "$components/Navbar.svelte";
+	import Card from "$components/Card.svelte";
+	import { projects } from "$assets/data/projects";
 </script>
 
-<Navbar />
-
 <section class="projects">
-	<h2>Projects</h2>
+	<h2 class="title">for fun</h2>
+
 	<div class="project-list">
 		{#each projects as project}
 			<Card
@@ -35,12 +21,16 @@
 </section>
 
 <style>
-	.projects {
-		padding: 20px;
+	.title {
+		font-size: var(--font-size-h1);
+		font-weight: 700;
+		line-height: 0.9;
+		margin: 5rem 0 0;
+		text-transform: uppercase;
 	}
 	.project-list {
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 		gap: 20px;
 	}
 </style>
