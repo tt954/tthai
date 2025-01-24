@@ -26,7 +26,10 @@
 </svelte:head>
 
 <section class="hero">
-	<h1>Tiffany Thai</h1>
+	<div class="hero-header">
+		<h1 class="hero-title">software engineer</h1>
+		<h2 class="hero-name">( tiffany thai )</h2>
+	</div>
 
 	<nav class="menu">
 		<ul>
@@ -39,23 +42,19 @@
 			<li aria-current={$page.url.pathname === "/fun" ? "page" : undefined}>
 				<a href="/fun">Fun</a>
 			</li>
-			<li>
-				<a href="#" on:click|preventDefault={toggleContacts}>Contacts</a>
-			</li>
-			{#if isExpanded}
-				<li class="contact-info">
-					<span>{email}</span>
-					<button on:click={copyEmail} title="Copy Email">
-						{#if isCopied}
-							<i class="fas fa-check"></i>
-						{:else}
-							<i class="fas fa-copy"></i>
-						{/if}
-					</button>
-				</li>
-			{/if}
 		</ul>
 	</nav>
+
+	<div class="footer">
+		<div class="footer-contact">
+			<p>+1 817 881 1459</p>
+			<p>tiffany11459@gmail.com preferred</p>
+		</div>
+		<div class="footer-extra">
+			<p>2025 portfolio</p>
+			<p>(✿)</p>
+		</div>
+	</div>
 </section>
 
 <style>
@@ -63,55 +62,42 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
 		height: 100vh;
+		width: max-content;
 		text-align: center;
-		background-color: #f5f5f5;
-		padding: 0 1rem;
+		padding: 7.25rem 1rem;
+		margin: 0 auto;
 	}
 
-	h1 {
-		font-size: 3rem;
-		font-weight: 700;
-		color: #333;
-		margin-bottom: 2rem;
+	.hero-title {
+		font-family: var(--font-oswald);
+		font-size: 7.5rem;
+		font-weight: 400;
+		line-height: 1.25;
+		text-transform: capitalize;
+	}
+	.hero-name {
+		font-family: var(--font-merriweather);
+		font-size: 2.5rem;
+		font-style: italic;
+		font-weight: 300;
 	}
 
-	nav.menu ul {
-		list-style: none;
-		padding: 0;
+	.footer {
 		display: flex;
-		gap: 1.5rem;
+		justify-content: space-between;
+		align-items: flex-end;
+		font-family: var(--font-oswald);
+		font-size: var(--font-size-h4);
+		text-transform: uppercase;
+		width: 100%;
 	}
-
-	nav.menu li {
-		font-size: 1.2rem;
+	.footer-contact {
+		text-align: left;
 	}
-
-	nav.menu a {
-		text-decoration: none;
-		color: #007acc;
-		transition: color 0.3s;
-	}
-
-	nav.menu a:hover {
-		color: #005f99;
-	}
-
-	.contact-info {
+	.footer-extra {
 		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-	}
-
-	.contact-info button {
-		background: none;
-		border: none;
-		cursor: pointer;
-		color: #007acc;
-	}
-
-	.contact-info button:hover {
-		color: #005f99;
+		gap: 1rem;
 	}
 </style>

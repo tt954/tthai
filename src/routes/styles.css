@@ -1,7 +1,11 @@
 @import "@fontsource/poppins";
+@import "@fontsource/merriweather";
+@import "@fontsource-variable/oswald";
 
 :root {
 	--font-body: "Poppins", sans-serif;
+	--font-merriweather: "Merriweather", serif;
+	--font-oswald: "Oswald Variable", sans-serif;
 	--color-bg-0: rgb(202, 216, 228);
 	--color-bg-1: hsl(209, 36%, 86%);
 	--color-bg-2: hsl(224, 44%, 95%);
