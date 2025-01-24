@@ -8,8 +8,8 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
-		title: "Project 1",
-		description: "Description of project 1",
+		title: "Open fridge",
+		description: "Recipe generator, never leave an ingredient behind or in the trash",
 		link: "#",
 		technologies: ["react", "typescript", "nodejs"],
 	},

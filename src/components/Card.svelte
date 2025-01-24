@@ -11,20 +11,26 @@
 </script>
 
 <div class="card">
-	<h2>{title}</h2>
-	<p class="card-description">{description}</p>
+	<div class="card-header">
+		<div class="card-title">
+			<h2>{title}</h2>
+			<p>{description}</p>
+		</div>
+		<a class="card-link" {href} target="_blank" rel="noopener noreferrer">
+			<i class="fa-sharp-duotone fa-solid fa-arrow-up-right-from-square"></i>
+		</a>
+	</div>
 
-	<ul class="card-technologies">
+	<div>
+		<img class="card-image" src={imageUrl ? imageUrl : CardDefaultImage} alt={title} />
 		{#if technologies}
-			{#each technologies as tech}
-				<li>{@html techIcons[tech]}</li>
-			{/each}
+			<ul class="card-technologies">
+				{#each technologies as tech}
+					<p>{tech}</p>
+				{/each}
+			</ul>
 		{/if}
-	</ul>
-
-	<a class="card-link" {href} target="_blank" rel="noopener noreferrer">Visit Project</a>
-
-	<img class="card-image" src={imageUrl ? imageUrl : CardDefaultImage} alt={title} />
+	</div>
 </div>
 
 <style>
@@ -35,23 +41,21 @@
 	}
 
 	.card {
-		border-radius: 12px;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		padding: 1.5rem;
-		margin-bottom: 1.5rem;
-		width: 100%;
-		max-width: 500px;
-		transition: box-shadow 0.3s ease;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 1rem;
+		height: 500px;
 	}
 
-	.card:hover {
-		box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+	.card-header {
+		display: flex;
+		justify-content: space-between;
 	}
 
-	h2 {
-		font-size: 1.8rem;
-		margin-bottom: 0.5rem;
-		color: #333;
+	.card-title {
+		font-size: var(--font-size-h5);
+		line-height: 1.2;
 	}
 
 	.card-link {
@@ -67,25 +71,12 @@
 		text-decoration: underline;
 	}
 
-	p {
-		font-size: 1rem;
-		color: #666;
-		margin-bottom: 1rem;
-	}
-
 	.card-technologies {
-		list-style-type: none;
-		padding: 0;
 		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
-	}
-
-	.card-technologies li {
-		background-color: #f3f4f6;
-		color: #333;
-		padding: 0.4rem 0.8rem;
-		border-radius: 6px;
-		font-size: 0.9rem;
+		gap: 0.5rem;
+		list-style-type: none;
+		overflow-x: scroll;
+		padding: 0.25rem 0 0;
+		text-transform: uppercase;
 	}
 </style>

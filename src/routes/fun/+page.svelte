@@ -25,12 +25,13 @@
 		font-size: var(--font-size-h1);
 		font-weight: 700;
 		line-height: 0.9;
-		margin: 5rem 0 0;
+		margin: 5rem 0 0 1rem;
 		text-transform: uppercase;
 	}
 	.project-list {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 20px;
+		margin: 1rem;
 	}
 </style>
