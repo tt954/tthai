@@ -9,13 +9,25 @@
 		<h2 class="hero-name">( tiffany thai )</h2>
 	</div>
 
+	<ul class="experience">
+		<li>
+			<a class="folder" href="/experience">
+				<div class="folder-icon">
+					<i class="fa-solid fa-folder folder-open"></i>
+					<i class="fa-regular fa-folder-open folder-close"></i>
+				</div>
+				<span class="folder-label">work</span>
+			</a>
+		</li>
+	</ul>
+
 	<div class="footer">
 		<div class="footer-contact">
 			<p>+1 817 881 1459</p>
 			<p>tiffany11459@gmail.com preferred</p>
 		</div>
-		<div class="footer-extra">
-			<a class="page-link" href="/experience">2025 portfolio</a>
+		<div class="footer-links">
+			<p>2025 portfolio</p>
 			<p>(✿)</p>
 		</div>
 	</div>
@@ -49,6 +61,52 @@
 		font-weight: 300;
 	}
 
+	.experience {
+		display: flex;
+		list-style: none;
+		gap: 1rem;
+	}
+	.folder {
+		display: flex;
+		text-decoration: none;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		height: max-content;
+	}
+	.folder-icon {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.folder-icon .folder-open,
+	.folder-icon .folder-close {
+		font-size: 7.5rem;
+		color: var(--color-blue);
+		position: absolute;
+		transition: opacity 0.3s ease;
+	}
+	.folder-icon .folder-close {
+		opacity: 0;
+	}
+	.folder-icon:hover .folder-open {
+		opacity: 0;
+	}
+	.folder-icon:hover .folder-close {
+		opacity: 1;
+	}
+	.folder-label {
+		display: block;
+		/* font-weight: 500; */
+		font-family: var(--font-oswald);
+		margin: 3.5rem;
+		font-size: 1.5rem;
+		color: var(--color-blue);
+		text-transform: uppercase;
+	}
+
 	.footer {
 		align-items: flex-end;
 		display: flex;
@@ -61,15 +119,15 @@
 	.footer-contact {
 		text-align: left;
 	}
-	.footer-extra {
+	.footer-links {
 		display: flex;
 		gap: 1rem;
 	}
 
-	.page-link {
+	.experience-link {
 		text-decoration: none;
 	}
-	.page-link:visited {
+	.experience-link:visited {
 		color: inherit;
 	}
 </style>
