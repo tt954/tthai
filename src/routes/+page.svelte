@@ -80,11 +80,4 @@
 		display: flex;
 		gap: 1rem;
 	}
-
-	.experience-link {
-		text-decoration: none;
-	}
-	.experience-link:visited {
-		color: inherit;
-	}
 </style>

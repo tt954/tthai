@@ -45,7 +45,6 @@
 	}
 	.folder-label {
 		display: block;
-		/* font-weight: 500; */
 		font-family: var(--font-oswald);
 		margin: 3.5rem;
 		font-size: 1.5rem;
