@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { experiences } from "$assets/data/experiences";
+	import House from "$assets/images/house_rawpixel.png";
 
 	// URLs for LinkedIn and resume
 	const linkedInUrl: string = "https://www.linkedin.com/in/your-profile";
@@ -12,24 +13,22 @@
 </script>
 
 <section class="experience">
-	<h2 class="title">recent <br /> experience.</h2>
+	<h2 class="title">recent work.</h2>
 
-	<ul class="experiences">
-		{#each experiences as exp, index}
-			<li class="experience-item">
-				<h3 class="experience-title">
+	<table class="experiences">
+		<tr>
+			<th>Time</th>
+			<th>Position</th>
+		</tr>
+		{#each experiences as exp}
+			<tr class="experience-item">
+				<td>{exp.year}</td>
+				<td class="experience-title">
 					{exp.position}<br />{exp.at}
-					<i class="fas fa-chevron-down" on:click={() => toggleDetails(index)}></i>
-				</h3>
-				{#if expandedIndex === index}
-					<div class="experience-details">
-						<img class="experience-image" src={exp.image} alt="{exp.at} logo" />
-						<p>{exp.year}</p>
-					</div>
-				{/if}
-			</li>
+				</td>
+			</tr>
 		{/each}
-	</ul>
+	</table>
 
 	<div class="icons">
 		<a href={linkedInUrl} target="_blank" title="LinkedIn Profile">
@@ -45,59 +44,44 @@
 
 <style>
 	.experience {
-		border-left: 2px solid var(--color-black);
-		margin-left: 15%;
-		padding-left: 3rem;
+		background-color: var(--color-blue);
+		color: var(--color-white);
+		height: 100vh;
+		width: 100%;
 	}
 
 	.title {
+		font-family: var(--font-oswald);
 		font-size: var(--font-size-h1);
 		font-weight: 700;
-		line-height: 0.9;
-		margin: 5rem 0 2rem;
+		padding: 5rem 1rem 0;
+		text-align: right;
 		text-transform: uppercase;
 	}
 
+	.experiences {
+		font-family: var(--font-merriweather);
+		margin: 0 2rem;
+		width: 100%;
+		border-collapse: collapse;
+	}
+	.experiences .experience-item {
+		border: 1.5px solid var(--color-white);
+		padding: 0.5rem;
+	}
+
 	.experience-item {
-		border-top: 1px solid var(--color-black);
-		display: flex;
-		justify-content: space-between;
 		font-size: var(--font-size-h5);
-		padding-top: 1rem;
-		text-transform: uppercase;
+		text-transform: capitalize;
 	}
 
 	.experience-title {
 		flex-wrap: wrap;
-		font-size: var(--font-size-h3);
+		font-size: var(--font-size-h4);
 		font-weight: 300;
 		line-height: 0.95;
-		margin-right: 2rem;
-		width: 45%;
 	}
 
-	.experience-details {
-		display: flex;
-	}
-
-	.experience-details > p {
-		width: 35%;
-	}
-
-	.experience-image {
-		width: 250px;
-		height: 312.5px;
-		background: grey;
-	}
-
-	ul {
-		list-style: none;
-		padding: 0;
-	}
-	li {
-		font-size: 18px;
-		margin-bottom: 10px;
-	}
 	.icons {
 		margin-top: 20px;
 		display: flex;

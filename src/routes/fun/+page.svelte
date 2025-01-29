@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Card from "$components/Card.svelte";
+
 	import { projects, technologies } from "$assets/data/projects";
 </script>
 
