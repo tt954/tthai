@@ -3,9 +3,8 @@
 	import UWM from "$assets/images/uwm.png";
 	import Schedulicity from "$assets/images/schedulicity.png";
 
-	// URLs for LinkedIn and resume
-	const linkedInUrl: string = "https://www.linkedin.com/in/your-profile";
-	const resumeUrl: string = "/resume.pdf"; // Adjust this path to where your resume is located
+	const linkedInUrl: string = "https://www.linkedin.com/tieulam";
+	const resumeUrl: string = "/resume.pdf";
 
 	const experiences = [Schedulicity, UWM, Dominos];
 </script>
@@ -53,9 +52,9 @@
 
 	.experiences {
 		display: flex;
+		list-style: none;
 		gap: 1rem;
 		margin: 2rem;
-		list-style: none;
 	}
 	.experience {
 		height: 450px;
@@ -64,13 +63,13 @@
 	}
 
 	.icons {
-		display: flex;
 		align-items: center;
-		margin: 0 auto;
+		display: flex;
 		gap: 20px;
+		margin: 0 auto;
 	}
 	.icons i {
-		font-size: var(--font-size-h3);
 		color: var(--color-brown);
+		font-size: var(--font-size-h3);
 	}
 </style>
