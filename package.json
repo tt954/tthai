@@ -36,6 +36,7 @@
 	"dependencies": {
 		"@fontsource-variable/oswald": "^5.1.1",
 		"@fontsource/merriweather": "^5.1.1",
-		"@fontsource/poppins": "^5.1.1"
+		"@fontsource/poppins": "^5.1.1",
+		"@sveltejs/adapter-vercel": "^5.5.3"
 	}
 }
