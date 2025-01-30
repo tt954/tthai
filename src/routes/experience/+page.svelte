@@ -2,9 +2,9 @@
 	import Dominos from "$assets/images/dominos.png";
 	import UWM from "$assets/images/uwm.png";
 	import Schedulicity from "$assets/images/schedulicity.png";
+	import Resume from "$assets/images/resume.pdf";
 
 	const linkedInUrl: string = "https://www.linkedin.com/tieulam";
-	const resumeUrl: string = "/resume.pdf";
 
 	const experiences = [Schedulicity, UWM, Dominos];
 </script>
@@ -25,7 +25,7 @@
 		<a href={linkedInUrl} target="_blank" title="LinkedIn Profile">
 			<i class="fab fa-linkedin"></i>
 		</a>
-		<a href={resumeUrl} target="_blank" title="Download Resume">
+		<a href={Resume} target="_blank" title="Download Resume">
 			<i class="fa-solid fa-file-pdf"></i>
 		</a>
 	</div>
