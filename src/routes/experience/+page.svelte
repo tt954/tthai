@@ -1,101 +1,76 @@
 <script lang="ts">
-	import { experiences } from "$assets/data/experiences";
-	import House from "$assets/images/house_rawpixel.png";
+	import Dominos from "$assets/images/dominos.png";
+	import UWM from "$assets/images/uwm.png";
+	import Schedulicity from "$assets/images/schedulicity.png";
 
 	// URLs for LinkedIn and resume
 	const linkedInUrl: string = "https://www.linkedin.com/in/your-profile";
 	const resumeUrl: string = "/resume.pdf"; // Adjust this path to where your resume is located
-	let expandedIndex: number | null = null;
 
-	function toggleDetails(index: number) {
-		expandedIndex = expandedIndex === index ? null : index;
-	}
+	const experiences = [Schedulicity, UWM, Dominos];
 </script>
 
-<section class="experience">
-	<h2 class="title">recent work.</h2>
+<section class="work">
+	<h2 class="title">work experience.</h2>
 
-	<table class="experiences">
-		<tr>
-			<th>Time</th>
-			<th>Position</th>
-		</tr>
-		{#each experiences as exp}
-			<tr class="experience-item">
-				<td>{exp.year}</td>
-				<td class="experience-title">
-					{exp.position}<br />{exp.at}
-				</td>
-			</tr>
+	<ul class="experiences">
+		{#each experiences as experience}
+			<li class="experience"><img src={experience} alt="work experience" /></li>
 		{/each}
-	</table>
+	</ul>
 
 	<div class="icons">
+		<a href="/" title="Home">
+			<i class="fa-solid fa-home"></i>
+		</a>
 		<a href={linkedInUrl} target="_blank" title="LinkedIn Profile">
 			<i class="fab fa-linkedin"></i>
 		</a>
 		<a href={resumeUrl} target="_blank" title="Download Resume">
-			<i class="fas fa-file-pdf"></i>
+			<i class="fa-solid fa-file-pdf"></i>
 		</a>
 	</div>
-
-	<button>HELLO</button>
 </section>
 
 <style>
-	.experience {
-		background-color: var(--color-blue);
-		color: var(--color-white);
+	.work {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		height: 100vh;
-		width: 100%;
+		width: 100vw;
+		margin: 0 auto;
 	}
-
 	.title {
-		font-family: var(--font-oswald);
+		color: var(--color-brown);
+		font-family: var(--font-merriweather);
 		font-size: var(--font-size-h1);
 		font-weight: 700;
-		padding: 5rem 1rem 0;
+		padding: 2rem;
 		text-align: right;
-		text-transform: uppercase;
-	}
-
-	.experiences {
-		font-family: var(--font-merriweather);
-		margin: 0 2rem;
-		width: 100%;
-		border-collapse: collapse;
-	}
-	.experiences .experience-item {
-		border: 1.5px solid var(--color-white);
-		padding: 0.5rem;
-	}
-
-	.experience-item {
-		font-size: var(--font-size-h5);
 		text-transform: capitalize;
 	}
 
-	.experience-title {
-		flex-wrap: wrap;
-		font-size: var(--font-size-h4);
-		font-weight: 300;
-		line-height: 0.95;
+	.experiences {
+		display: flex;
+		gap: 1rem;
+		margin: 2rem;
+		list-style: none;
+	}
+	.experience {
+		height: 450px;
+		width: 450px;
+		object-fit: cover;
 	}
 
 	.icons {
-		margin-top: 20px;
 		display: flex;
+		align-items: center;
+		margin: 0 auto;
 		gap: 20px;
 	}
-	a {
-		color: #333;
-		font-size: 2rem;
-		text-decoration: none;
-	}
-	a:hover {
-		color: #0077b5; /* LinkedIn color */
-	}
-	i.fas.fa-file-pdf {
-		color: red;
+	.icons i {
+		font-size: var(--font-size-h3);
+		color: var(--color-brown);
 	}
 </style>
