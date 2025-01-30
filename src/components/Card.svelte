@@ -3,12 +3,10 @@
 	export let imageUrl: string | undefined;
 	export let href: string;
 	export let description: string;
-
-	import CardDefaultImage from "$assets/images/tech_default.jpg";
 </script>
 
 <div class="card">
-	<img class="card-image" src={imageUrl ? imageUrl : CardDefaultImage} alt={title} />
+	<img class="card-image" src={imageUrl} alt={title} />
 
 	<div class="card-header">
 		<div class="card-title">
