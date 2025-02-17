@@ -72,4 +72,27 @@
 		color: var(--color-brown);
 		font-size: var(--font-size-h3);
 	}
+
+	@media (max-width: 768px) {
+		.title {
+			font-size: var(--font-size-h3);
+			text-align: center;
+			padding: 1rem 1rem 0;
+		}
+		.experiences {
+			flex-direction: column;
+			flex-direction: column-reverse;
+			align-items: center;
+			gap: 0.5rem;
+			margin: 1rem;
+			padding: 0;
+		}
+		.experience {
+			height: 250px;
+			width: 250px;
+		}
+		.icons i {
+			font-size: var(--font-size-h4);
+		}
+	}
 </style>

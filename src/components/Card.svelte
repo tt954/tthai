@@ -66,12 +66,15 @@
 		text-decoration: underline;
 	}
 
-	.card-technologies {
-		display: flex;
-		gap: 0.5rem;
-		list-style-type: none;
-		overflow-x: scroll;
-		padding: 0.25rem 0 0;
-		text-transform: uppercase;
+	@media (max-width: 768px) {
+		.card-image {
+			height: 250px;
+		}
+		.card-title {
+			font-size: var(--font-size-small);
+		}
+		.card-link {
+			font-size: 0.875rem;
+		}
 	}
 </style>

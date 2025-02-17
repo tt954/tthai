@@ -4,15 +4,15 @@
 	import { projects, technologies } from "$assets/data/projects";
 </script>
 
-<section class="projects">
-	<div class="header">
-		<h2 class="title">fun</h2>
+<main class="fun">
+	<header>
+		<h1>fun</h1>
 		<ul class="technologies">
 			{#each technologies as technology}
 				<li><span>〇</span>{technology}</li>
 			{/each}
 		</ul>
-	</div>
+	</header>
 
 	<div class="project-list">
 		{#each projects as project}
@@ -24,16 +24,16 @@
 			/>
 		{/each}
 	</div>
-</section>
+</main>
 
 <style>
-	.header {
+	header {
 		margin: 0 1rem 0;
 		display: flex;
 		align-items: center;
 		line-height: 1.2;
 	}
-	.title {
+	h1 {
 		font-family: var(--font-poppins);
 		font-size: var(--font-size-h1);
 		font-weight: 700;
@@ -60,5 +60,23 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		margin: 0 1rem;
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 5.5rem;
+			text-align: center;
+			width: 100%;
+		}
+		.technologies {
+			font-size: 1rem;
+			justify-content: left;
+			padding: 1rem 0.5rem 0.5rem;
+		}
+		.project-list {
+			grid-template-columns: 1fr;
+			margin: 0;
+			gap: 0.5rem;
+		}
 	}
 </style>

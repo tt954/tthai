@@ -1,4 +1,5 @@
 <script>
+	import "./styles.css";
 	import Folder from "$components/Folder.svelte";
 </script>
 
@@ -7,31 +8,31 @@
 	<meta name="tieulam thai" content="personal website" />
 </svelte:head>
 
-<section class="hero">
-	<div class="hero-header">
-		<h1 class="hero-title">software engineer</h1>
-		<h2 class="hero-name">( tiffany thai )</h2>
-	</div>
+<main class="landing">
+	<header class="header">
+		<h1 class="header-title">software engineer</h1>
+		<p class="header-my-name">( tiffany thai )</p>
+	</header>
 
-	<ul class="experience">
-		<li><Folder href="/experience" label="work" /></li>
+	<ul class="portfolio-cta">
+		<li><Folder href="/work" label="work" /></li>
 		<li><Folder href="/fun" label="fun" /></li>
 	</ul>
 
-	<div class="footer">
+	<footer>
 		<div class="footer-contact">
 			<p>+1 817 881 1459</p>
 			<p>tiffany11459@gmail.com preferred</p>
 		</div>
-		<div class="footer-links">
+		<div class="footer-cta">
 			<p>2025 portfolio</p>
 			<p>(✿)</p>
 		</div>
-	</div>
-</section>
+	</footer>
+</main>
 
 <style>
-	section.hero {
+	main.landing {
 		align-items: center;
 		color: var(--color-blue);
 		display: flex;
@@ -44,27 +45,28 @@
 		width: max-content;
 	}
 
-	.hero-title {
+	.header-title {
 		font-family: var(--font-oswald);
 		font-size: 7.5rem;
 		font-weight: 400;
 		line-height: 1.25;
 		text-transform: capitalize;
 	}
-	.hero-name {
+	.header-my-name {
 		font-family: var(--font-merriweather);
 		font-size: 2.5rem;
 		font-style: italic;
 		font-weight: 300;
 	}
 
-	.experience {
+	.portfolio-cta {
 		display: flex;
 		list-style: none;
 		gap: 1rem;
+		padding: 0;
 	}
 
-	.footer {
+	footer {
 		align-items: flex-end;
 		display: flex;
 		font-family: var(--font-oswald);
@@ -76,8 +78,29 @@
 	.footer-contact {
 		text-align: left;
 	}
-	.footer-links {
+	.footer-cta {
 		display: flex;
 		gap: 1rem;
+	}
+
+	@media (max-width: 768px) {
+		.header-title {
+			font-size: 3rem;
+		}
+		.header-my-name {
+			font-size: 1.5rem;
+		}
+		.portfolio-cta {
+			flex-direction: column;
+		}
+		footer {
+			flex-direction: column;
+			align-items: center;
+			font-size: var(--font-size-h5);
+		}
+		.footer-cta,
+		.footer-contact {
+			text-align: center;
+		}
 	}
 </style>
