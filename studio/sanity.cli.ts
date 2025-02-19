@@ -4,13 +4,13 @@
  * and customizes the Vite bundler configuration.
  * Learn more: https://www.sanity.io/docs/cli
  */
-import {defineCliConfig} from 'sanity/cli'
+import { defineCliConfig } from 'sanity/cli';
 
 export default defineCliConfig({
   api: {
-    projectId: process.env.SANITY_STUDIO_API_PROJECT_ID,
+    projectId: process.env.PUBLIC_SANITY_PROJECT_ID,
     dataset: process.env.PUBLIC_SANITY_DATASET,
   },
-  studioHost: process.env.SANITY_STUDIO_HOST,
+  studioHost: process.env.PUBLIC_SANITY_STUDIO_HOST,
   autoUpdates: true,
 })

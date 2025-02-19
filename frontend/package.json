@@ -1,5 +1,5 @@
 {
-	"name": "tthai",
+	"name": "tthai_frontend",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
