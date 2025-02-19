@@ -11,7 +11,7 @@
 <main class="landing">
 	<header class="header">
 		<h1 class="header-title">software engineer</h1>
-		<p class="header-my-name">( tiffany thai )</p>
+		<a class="header-my-name" href="/posts">( tiffany thai )</a>
 	</header>
 
 	<ul class="portfolio-cta">
